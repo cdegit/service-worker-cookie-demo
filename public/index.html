@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    </head>
+    <body>
+        <button id="req">
+            fetch
+        </button>
+
+        <!-- <button id="sw">
+            install sw without cache
+        </button> -->
+
+        <script>
+            const installSW = () => {
+                navigator.serviceWorker.register(`/worker.js?breaker=${Date.now()}`)
+                    .then(() => navigator.serviceWorker.ready)
+                    .then(() => {
+                        console.log('Service worker is ready')
+                    })
+                    .catch(console.error)
+            }
+
+            const reqFile = () => {
+                fetch('/', {credentials: 'same-origin'})
+            }
+
+            // const installCachelessSW = () => {
+            //     installSW(false)
+            // }
+
+            document.querySelector('#req').addEventListener('click', reqFile)
+            // document.querySelector('#sw').addEventListener('click', installCachelessSW)
+
+            installSW()
+        </script>
+    </body>
+</html>
