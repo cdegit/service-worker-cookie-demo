@@ -4,12 +4,8 @@
     </head>
     <body>
         <button id="req">
-            fetch
+            Fetch /
         </button>
-
-        <!-- <button id="sw">
-            install sw without cache
-        </button> -->
 
         <script>
             const installSW = () => {
@@ -21,16 +17,10 @@
                     .catch(console.error)
             }
 
-            const reqFile = () => {
-                fetch('/', {credentials: 'same-origin'})
-            }
-
-            // const installCachelessSW = () => {
-            //     installSW(false)
-            // }
-
-            document.querySelector('#req').addEventListener('click', reqFile)
-            // document.querySelector('#sw').addEventListener('click', installCachelessSW)
+            document
+                .querySelector('#req')
+                // Use credentials: 'same-origin' so that the Set-Cookie is respected
+                .addEventListener('click', () => fetch('/', {credentials: 'same-origin'}))
 
             installSW()
         </script>

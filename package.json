@@ -1,18 +1,14 @@
 {
   "name": "ios-sw-test",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
   "author": "Cassie de Git",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
-    "sw-toolbox": "^3.6.0",
-    "webpack": "^4.10.2",
-    "webpack-cli": "^3.0.1"
+    "express": "4.16.3",
+    "sw-toolbox": "3.6.0",
+    "webpack": "4.10.2",
+    "webpack-cli": "3.0.1"
   }
 }
